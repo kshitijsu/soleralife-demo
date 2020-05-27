@@ -19,18 +19,18 @@ export default function Body() {
       <View style={styles.dotnline}>
         <Dotnline />
         <View style={{ flex: 2, marginLeft: 30 }}>
-          {/* <Card
+          <Card
             active='true'
             name='Barry Allen'
             time='12 pm'
             symptoms='Fever'
-          /> */}
-          <Card
+          />
+          {/* <Card
             active='false'
             name='Barry Allen'
             time='12 pm'
             symptoms='Fever'
-          />
+          /> */}
           <Card
             active='false'
             name='Oliver Queen'

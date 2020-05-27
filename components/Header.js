@@ -13,6 +13,7 @@ import Plus from "react-native-vector-icons/AntDesign";
 export default function Header() {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
+
   return (
     <ImageBackground
       style={styles.imgbg}
@@ -40,22 +41,22 @@ export default function Header() {
         <Plus name='pluscircle' style={styles.plus} />
       </View>
       <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-        <Text style={styles.daydate}>S</Text>
-        <Text style={styles.daydate}>M</Text>
-        <Text style={styles.daydate}>T</Text>
-        <Text style={styles.daydate}>W</Text>
-        <Text style={styles.daydate}>T</Text>
-        <Text style={styles.daydate}>F</Text>
-        <Text style={styles.daydate}>S</Text>
+        <Text style={styles.day}>S</Text>
+        <Text style={styles.today}>M</Text>
+        <Text style={styles.day}>T</Text>
+        <Text style={styles.day}>W</Text>
+        <Text style={styles.day}>T</Text>
+        <Text style={styles.day}>F</Text>
+        <Text style={styles.day}>S</Text>
       </View>
       <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-        <Text style={styles.daydate}>3</Text>
-        <Text style={styles.daydate}>4</Text>
-        <Text style={styles.daydate}>5</Text>
-        <Text style={styles.daydate}>6</Text>
-        <Text style={styles.daydate}>7</Text>
-        <Text style={styles.daydate}>8</Text>
-        <Text style={styles.daydate}>9</Text>
+        <Text style={styles.date}>3</Text>
+        <Text style={styles.today}>4</Text>
+        <Text style={styles.date}>5</Text>
+        <Text style={styles.date}>6</Text>
+        <Text style={styles.date}>7</Text>
+        <Text style={styles.date}>8</Text>
+        <Text style={styles.date}>9</Text>
       </View>
     </ImageBackground>
   );
@@ -111,11 +112,27 @@ const styles = StyleSheet.create({
     marginRight: 10,
     fontSize: 30,
   },
-  daydate: {
+  day: {
     color: "white",
     fontSize: 25,
     marginLeft: 20,
     marginRight: 20,
     marginBottom: 20,
+  },
+  date: {
+    color: "white",
+    fontSize: 25,
+    fontWeight: "bold",
+    marginLeft: 20,
+    marginRight: 20,
+    marginBottom: 20,
+  },
+  today: {
+    color: "rgba(206,93,34,1)",
+    fontSize: 25,
+    marginLeft: 20,
+    marginRight: 20,
+    marginBottom: 20,
+    fontWeight: "bold",
   },
 });
