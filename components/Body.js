@@ -10,16 +10,39 @@ export default function Body() {
       <View style={styles.body}>
         <View>
           <Text style={styles.doctorText}>Hello Doctor</Text>
-          <Text style={styles.doctorText}>You have 4 Appointments.</Text>
+          <Text style={styles.doctorText}>
+            You have <Text style={{ color: "black" }}>4 appointments.</Text>
+          </Text>
         </View>
         <Icon name='dots-two-vertical' style={styles.dot} />
       </View>
       <View style={styles.dotnline}>
         <Dotnline />
-        <View>
-          <Card active='true' name='Barry Allen' />
-          <Card active='false' name='Oliver Queen' />
-          <Card active='false' name='Lyla Michaels' />
+        <View style={{ flex: 2, marginLeft: 30 }}>
+          {/* <Card
+            active='true'
+            name='Barry Allen'
+            time='12 pm'
+            symptoms='Fever'
+          /> */}
+          <Card
+            active='false'
+            name='Barry Allen'
+            time='12 pm'
+            symptoms='Fever'
+          />
+          <Card
+            active='false'
+            name='Oliver Queen'
+            time='3:30 pm'
+            symptoms='Consult & Diagnosis'
+          />
+          <Card
+            active='false'
+            name='Lyla Michaels'
+            time='9 pm'
+            symptoms='Consult & Diagnosis'
+          />
         </View>
       </View>
     </View>
@@ -44,6 +67,8 @@ const styles = StyleSheet.create({
   },
   doctorText: {
     fontSize: 20,
+    color: "#ADADAD",
+    fontWeight: "bold",
   },
   dot: {
     marginRight: 15,

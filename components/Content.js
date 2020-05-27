@@ -17,6 +17,7 @@ export default function Content() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: Platform.OS === "android" ? 30 : 0,
     justifyContent: "space-between",
   },
   header: {

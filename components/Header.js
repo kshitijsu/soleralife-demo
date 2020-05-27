@@ -8,7 +8,6 @@ import {
   Switch,
 } from "react-native";
 import Icon from "react-native-vector-icons/Feather";
-import SwitchIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import Plus from "react-native-vector-icons/AntDesign";
 
 export default function Header() {
@@ -29,8 +28,8 @@ export default function Header() {
       </View>
       <View style={styles.switchbtn}>
         <Switch
-          trackColor={{ false: "#767577", true: "#81b0ff" }}
-          thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
+          trackColor={{ false: "white", true: "white" }}
+          thumbColor={isEnabled ? "#69CE8E" : "#f4f3f4"}
           ios_backgroundColor='#3e3e3e'
           onValueChange={toggleSwitch}
           value={isEnabled}
@@ -40,26 +39,38 @@ export default function Header() {
         <Text style={styles.monthText}>May</Text>
         <Plus name='pluscircle' style={styles.plus} />
       </View>
-      <View style={{ justifyContent: "space-between", flexDirection: "row" }}>
-        <Text style={styles.daydate}>S{"\n"}3</Text>
-        <Text style={{ color: "rgba(206,93,34,1)", fontSize: 25, margin: 20 }}>
-          M{"\n"}4
-        </Text>
-        <Text style={styles.daydate}>T{"\n"}5</Text>
-        <Text style={styles.daydate}>W{"\n"}6</Text>
-        <Text style={styles.daydate}>T{"\n"}7</Text>
-        <Text style={styles.daydate}>F{"\n"}8</Text>
-        <Text style={styles.daydate}>S{"\n"}9</Text>
+      <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+        <Text style={styles.daydate}>S</Text>
+        <Text style={styles.daydate}>M</Text>
+        <Text style={styles.daydate}>T</Text>
+        <Text style={styles.daydate}>W</Text>
+        <Text style={styles.daydate}>T</Text>
+        <Text style={styles.daydate}>F</Text>
+        <Text style={styles.daydate}>S</Text>
+      </View>
+      <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+        <Text style={styles.daydate}>3</Text>
+        <Text style={styles.daydate}>4</Text>
+        <Text style={styles.daydate}>5</Text>
+        <Text style={styles.daydate}>6</Text>
+        <Text style={styles.daydate}>7</Text>
+        <Text style={styles.daydate}>8</Text>
+        <Text style={styles.daydate}>9</Text>
       </View>
     </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
-  imgbg: {},
+  imgbg: {
+    borderTopLeftRadius: 50,
+    borderTopRightRadius: 50,
+  },
   container: {
     flexDirection: "row",
     justifyContent: "space-between",
+    paddingTop: 5,
+    alignItems: "center",
   },
   avataricon: {
     height: 40,
@@ -69,7 +80,8 @@ const styles = StyleSheet.create({
   },
   header: {
     color: "white",
-    fontSize: 30,
+    fontSize: 20,
+    justifyContent: "center",
     textAlign: "center",
   },
   icon: {
@@ -79,9 +91,7 @@ const styles = StyleSheet.create({
   },
   switchbtn: {
     padding: 10,
-    // justifyContent: "center",
     alignItems: "center",
-    // alignContent: "center",
   },
   month: {
     flexDirection: "row",
@@ -104,6 +114,8 @@ const styles = StyleSheet.create({
   daydate: {
     color: "white",
     fontSize: 25,
-    margin: 20,
+    marginLeft: 20,
+    marginRight: 20,
+    marginBottom: 20,
   },
 });

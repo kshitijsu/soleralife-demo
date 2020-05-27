@@ -12,8 +12,8 @@ export default function Card(props) {
         />
         <View>
           <Text style={styles.textName}>{props.name}</Text>
-          <Text style={styles.textSymptoms}>Fever</Text>
-          <Text style={styles.textTime}>12 pm</Text>
+          <Text style={styles.textSymptoms}>{props.symptoms}</Text>
+          <Text style={styles.textTime}>{props.time}</Text>
         </View>
       </View>
     );
@@ -27,20 +27,12 @@ export default function Card(props) {
           }}
         >
           <Text style={{ fontSize: 20, fontWeight: "bold" }}>{props.name}</Text>
-          <Text
-            style={{
-              fontSize: 20,
-              color: "rgba(206,93,34,1)",
-              fontWeight: "bold",
-            }}
-          >
-            3:30 pm
-          </Text>
+          <Text style={styles.textNextTime}>{props.time}</Text>
         </View>
         <Text
           style={{ fontSize: 20, marginTop: 30, color: "rgba(206,204,204,1)" }}
         >
-          Consult & Diagnosis
+          {props.symptoms}
         </Text>
       </View>
     );
@@ -53,7 +45,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     flexDirection: "row",
     borderRadius: 20,
-    width: 300,
+    width: "95%",
     height: 100,
     marginTop: 10,
   },
@@ -61,7 +53,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "rgba(200, 200, 200,1)",
     borderRadius: 20,
-    width: 300,
+    width: "95%",
     height: 100,
     marginTop: 20,
     paddingTop: 10,
@@ -73,7 +65,8 @@ const styles = StyleSheet.create({
     height: 80,
     width: 80,
     borderRadius: 100,
-    marginLeft: 10,
+    marginLeft: 20,
+    marginRight: 20,
   },
   textName: {
     color: "white",
@@ -84,13 +77,18 @@ const styles = StyleSheet.create({
   textSymptoms: {
     color: "white",
     fontStyle: "italic",
-    marginTop: 5,
-    marginBottom: 5,
+    fontSize: 18,
+    marginTop: 4,
   },
   textTime: {
     color: "rgba(206,93,34,1)",
     fontSize: 20,
     marginBottom: 5,
+    fontWeight: "bold",
+  },
+  textNextTime: {
+    fontSize: 20,
+    color: "#BBBBBB",
     fontWeight: "bold",
   },
 });
