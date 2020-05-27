@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
 //Icons
 import Home from "react-native-vector-icons/MaterialCommunityIcons";
 import Mail from "react-native-vector-icons/Entypo";
@@ -10,29 +10,20 @@ export default function Navigation() {
   return (
     <View style={styles.container}>
       <View style={styles.one}>
-        <View
-          style={{
-            backgroundColor: "rgba(206,93,34,0.2)",
-            justifyContent: "center",
-            alignItems: "center",
-            margin: 5,
-            flexDirection: "row",
-            borderRadius: 100,
-          }}
-        >
+        <TouchableOpacity style={styles.block}>
           <Home name='home' style={styles.home} />
           <Text style={styles.homeText}>Home</Text>
-        </View>
+        </TouchableOpacity>
       </View>
-      <View style={styles.two}>
+      <TouchableOpacity style={styles.two}>
         <Mail name='mail' style={styles.mail} />
-      </View>
-      <View style={styles.three}>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.three}>
         <Settings name='md-settings' style={styles.settings} />
-      </View>
-      <View style={styles.four}>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.four}>
         <Heart name='heart' style={styles.heart} />
-      </View>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -41,6 +32,14 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "row",
+  },
+  block: {
+    backgroundColor: "rgba(206,93,34,0.2)",
+    justifyContent: "center",
+    alignItems: "center",
+    margin: 5,
+    flexDirection: "row",
+    borderRadius: 100,
   },
   one: {
     flex: 1.5,

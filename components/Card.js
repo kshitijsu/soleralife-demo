@@ -7,30 +7,12 @@ export default function Card(props) {
     return (
       <View style={styles.active}>
         <Image
-          source={require("../assets/images/avatar.png")}
+          source={require("../assets/images/profile.jpg")}
           style={styles.avataricon}
         />
         <View>
-          <Text
-            style={{
-              color: "white",
-              fontSize: 30,
-              fontWeight: "bold",
-              marginTop: 5,
-            }}
-          >
-            {props.name}
-          </Text>
-          <Text
-            style={{
-              color: "white",
-              fontStyle: "italic",
-              marginTop: 5,
-              marginBottom: 5,
-            }}
-          >
-            Fever
-          </Text>
+          <Text style={styles.textName}>{props.name}</Text>
+          <Text style={styles.textSymptoms}>Fever</Text>
           <Text
             style={{
               color: "rgba(206,93,34,1)",
@@ -100,5 +82,17 @@ const styles = StyleSheet.create({
     width: 80,
     borderRadius: 100,
     marginLeft: 10,
+  },
+  textName: {
+    color: "white",
+    fontSize: 30,
+    fontWeight: "bold",
+    marginTop: 5,
+  },
+  textSymptoms: {
+    color: "white",
+    fontStyle: "italic",
+    marginTop: 5,
+    marginBottom: 5,
   },
 });

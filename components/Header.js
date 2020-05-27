@@ -1,18 +1,21 @@
 import React from "react";
-import { StyleSheet, View, Text, Image } from "react-native";
+import { StyleSheet, View, Text, Image, ImageBackground } from "react-native";
 import Icon from "react-native-vector-icons/Feather";
 import Switch from "react-native-vector-icons/MaterialCommunityIcons";
 import Plus from "react-native-vector-icons/AntDesign";
 
 export default function Header() {
   return (
-    <View>
+    <ImageBackground
+      style={styles.imgbg}
+      source={require("../assets/images/imgbg.jpg")}
+    >
       <View style={styles.container}>
         <Image
           source={require("../assets/images/avatar.png")}
           style={styles.avataricon}
         />
-        <Text style={styles.header}>Header</Text>
+        <Text style={styles.header}>Appointments</Text>
         <Icon name='menu' style={styles.icon} />
       </View>
       <Switch name='toggle-switch' style={styles.switch} />
@@ -29,11 +32,14 @@ export default function Header() {
         <Text style={styles.daydate}>F{"\n"}8</Text>
         <Text style={styles.daydate}>S{"\n"}9</Text>
       </View>
-    </View>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
+  imgbg: {
+    width: "100%",
+  },
   container: {
     flexDirection: "row",
     justifyContent: "space-between",
