@@ -14,8 +14,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "white",
-    borderBottomLeftRadius: 50,
-    borderBottomRightRadius: 50,
+    borderBottomLeftRadius: 40,
+    borderBottomRightRadius: 40,
   },
   footer: {
     color: "black",

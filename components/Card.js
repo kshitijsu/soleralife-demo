@@ -1,11 +1,11 @@
 import React from "react";
-import { StyleSheet, View, Text, Image } from "react-native";
+import { StyleSheet, View, Text, Image, TouchableOpacity } from "react-native";
 
 export default function Card(props) {
-  const isActive = props.active;
-  if (isActive == "true") {
+  var isActive = props.active;
+  if (isActive) {
     return (
-      <View style={styles.active}>
+      <TouchableOpacity style={styles.active} onPress={(isActive = !isActive)}>
         <Image
           source={require("../assets/images/profile.jpg")}
           style={styles.avataricon}
@@ -15,7 +15,7 @@ export default function Card(props) {
           <Text style={styles.textSymptoms}>{props.symptoms}</Text>
           <Text style={styles.textTime}>{props.time}</Text>
         </View>
-      </View>
+      </TouchableOpacity>
     );
   } else {
     return (

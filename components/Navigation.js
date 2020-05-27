@@ -50,41 +50,38 @@ const styles = StyleSheet.create({
   two: {
     flex: 1,
     height: "100%",
-    width: 20,
     justifyContent: "center",
     alignItems: "center",
   },
   three: {
     flex: 1,
     height: "100%",
-    width: 20,
     justifyContent: "center",
     alignItems: "center",
   },
   four: {
     flex: 1,
     height: "100%",
-    width: 20,
     justifyContent: "center",
     alignItems: "center",
   },
   //Icons
   home: {
     color: "rgba(206,93,34,1)",
-    fontSize: 40,
+    fontSize: 30,
     marginLeft: 10,
   },
   mail: {
     color: "rgba(128,128,128,1)",
-    fontSize: 40,
+    fontSize: 30,
   },
   settings: {
     color: "rgba(128,128,128,1)",
-    fontSize: 40,
+    fontSize: 30,
   },
   heart: {
     color: "rgba(128,128,128,1)",
-    fontSize: 40,
+    fontSize: 30,
   },
   //Text
   homeText: {

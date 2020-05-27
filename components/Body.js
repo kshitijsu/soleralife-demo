@@ -20,7 +20,7 @@ export default function Body() {
         <Dotnline />
         <View style={{ flex: 2, marginLeft: 30 }}>
           <Card
-            active='true'
+            active={true}
             name='Barry Allen'
             time='12 pm'
             symptoms='Fever'
@@ -32,13 +32,13 @@ export default function Body() {
             symptoms='Fever'
           /> */}
           <Card
-            active='false'
+            active={false}
             name='Oliver Queen'
             time='3:30 pm'
             symptoms='Consult & Diagnosis'
           />
           <Card
-            active='false'
+            active={false}
             name='Lyla Michaels'
             time='9 pm'
             symptoms='Consult & Diagnosis'
@@ -54,8 +54,8 @@ const styles = StyleSheet.create({
     flex: 8,
     backgroundColor: "white",
     width: "100%",
-    borderTopLeftRadius: 50,
-    borderTopRightRadius: 50,
+    borderTopLeftRadius: 40,
+    borderTopRightRadius: 40,
   },
   body: {
     color: "black",
