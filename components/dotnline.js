@@ -21,13 +21,13 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     marginLeft: 30,
     marginTop: 10,
-    backgroundColor: "orange",
+    backgroundColor: "rgba(206,93,34,1)",
   },
   line: {
     marginLeft: 30,
     marginTop: 10,
     height: 80,
     width: 5,
-    backgroundColor: "orange",
+    backgroundColor: "rgba(206,93,34,1)",
   },
 });

@@ -13,15 +13,7 @@ export default function Card(props) {
         <View>
           <Text style={styles.textName}>{props.name}</Text>
           <Text style={styles.textSymptoms}>Fever</Text>
-          <Text
-            style={{
-              color: "rgba(206,93,34,1)",
-              fontSize: 20,
-              marginBottom: 5,
-            }}
-          >
-            12 pm
-          </Text>
+          <Text style={styles.textTime}>12 pm</Text>
         </View>
       </View>
     );
@@ -94,5 +86,11 @@ const styles = StyleSheet.create({
     fontStyle: "italic",
     marginTop: 5,
     marginBottom: 5,
+  },
+  textTime: {
+    color: "rgba(206,93,34,1)",
+    fontSize: 20,
+    marginBottom: 5,
+    fontWeight: "bold",
   },
 });

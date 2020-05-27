@@ -1,10 +1,19 @@
-import React from "react";
-import { StyleSheet, View, Text, Image, ImageBackground } from "react-native";
+import React, { useState } from "react";
+import {
+  StyleSheet,
+  View,
+  Text,
+  Image,
+  ImageBackground,
+  Switch,
+} from "react-native";
 import Icon from "react-native-vector-icons/Feather";
-import Switch from "react-native-vector-icons/MaterialCommunityIcons";
+import SwitchIcon from "react-native-vector-icons/MaterialCommunityIcons";
 import Plus from "react-native-vector-icons/AntDesign";
 
 export default function Header() {
+  const [isEnabled, setIsEnabled] = useState(false);
+  const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
   return (
     <ImageBackground
       style={styles.imgbg}
@@ -18,14 +27,24 @@ export default function Header() {
         <Text style={styles.header}>Appointments</Text>
         <Icon name='menu' style={styles.icon} />
       </View>
-      <Switch name='toggle-switch' style={styles.switch} />
+      <View style={styles.switchbtn}>
+        <Switch
+          trackColor={{ false: "#767577", true: "#81b0ff" }}
+          thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
+          ios_backgroundColor='#3e3e3e'
+          onValueChange={toggleSwitch}
+          value={isEnabled}
+        />
+      </View>
       <View style={styles.month}>
         <Text style={styles.monthText}>May</Text>
         <Plus name='pluscircle' style={styles.plus} />
       </View>
       <View style={{ justifyContent: "space-between", flexDirection: "row" }}>
         <Text style={styles.daydate}>S{"\n"}3</Text>
-        <Text style={styles.daydate}>M{"\n"}4</Text>
+        <Text style={{ color: "rgba(206,93,34,1)", fontSize: 25, margin: 20 }}>
+          M{"\n"}4
+        </Text>
         <Text style={styles.daydate}>T{"\n"}5</Text>
         <Text style={styles.daydate}>W{"\n"}6</Text>
         <Text style={styles.daydate}>T{"\n"}7</Text>
@@ -37,9 +56,7 @@ export default function Header() {
 }
 
 const styles = StyleSheet.create({
-  imgbg: {
-    width: "100%",
-  },
+  imgbg: {},
   container: {
     flexDirection: "row",
     justifyContent: "space-between",
@@ -60,12 +77,11 @@ const styles = StyleSheet.create({
     fontSize: 30,
     marginRight: 10,
   },
-  switch: {
+  switchbtn: {
     padding: 10,
-    color: "white",
-    fontSize: 50,
-    textAlign: "center",
-    color: "lightgreen",
+    // justifyContent: "center",
+    alignItems: "center",
+    // alignContent: "center",
   },
   month: {
     flexDirection: "row",
